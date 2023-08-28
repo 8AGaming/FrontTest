@@ -1,7 +1,7 @@
 // With God's Help
 
 const getProducts = async () => {
-  const res = await fetch("http://localhost:8000/api/products/");
+  const res = await fetch("https://back-test-hm7e.onrender.com/api/products/");
   if (res.ok) {
     const data = await res.json();
     return data;
@@ -271,6 +271,7 @@ const main = async () => {
         product.description = description_input.value;
         data.push(product);
         addCards(product);
+        addProduct(product);
       });
       goBackButton.addEventListener("click", () => {
         HOME.style.display = "block";
@@ -399,7 +400,7 @@ const main = async () => {
       params: { id: product.id },
     };
     const req = await fetch(
-      `http://localhost:8000/api/products/${product.id}/delete`,
+      `https://back-test-hm7e.onrender.com/${product.id}/delete`,
       reqOptions
     );
     const result = await req.json();
@@ -415,7 +416,7 @@ const main = async () => {
       params: { id: product.id },
     };
     const req = await fetch(
-      `http://localhost:8000/api/products/${product.id}`,
+      `https://back-test-hm7e.onrender.com/api/products/${product.id}`,
       reqOptions
     );
     const result = await req.json();
@@ -431,7 +432,7 @@ const main = async () => {
       params: { id: product.id },
     };
     const req = await fetch(
-      `http://localhost:8000/api/products/${product.id}`,
+      `https://back-test-hm7e.onrender.com/api/products/`,
       reqOptions
     );
     const result = await req.json();
